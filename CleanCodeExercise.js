@@ -4,27 +4,44 @@
 // 
 // PLEASE REVIEW THIS CODE TO GET IT AS CLEAN AS POSSIBLE. JUSTIFY YOUR CHANGES.
 // 
-
+// 
 
 var c;
 
 public class Costumer {
 
+	public name = null;
+	public address = null;
+	public petNames = [];
+	public phoneNumber = null;
+	
 	constructor(name, address, petName1, petName2, petName3, petName4, phoneNumber) {
-		this.name = height;
+		this.name = name;
 		this.address = address;
 		this.petNames = [petName1, petName2, petName3, petName4];
 		this.phoneNumber = phoneNumber;
 	}
+	
+	//return customer 
 	public getCustomer(id) {
 		return $http.get('myServer.com/getCustomer?id=' + id);
 	}
+	
+	//find all customers
 	static all() {
 		return $http.get('myServer.com/returnAllCustomers');
 	}
 };
 
 public class Schedule {
+	
+	public dia = null;
+	public hora = null;
+	public duracao = null;
+	public customerId = null;
+	public type = null;
+	public otherInfo = null;
+
 	constructor(dia, hora, duracao, customerId, type, serviceDescription, otherInfo) {
 		this.dia = dia;
 		this.hora = hora;
@@ -33,6 +50,8 @@ public class Schedule {
 		this.type = type;
 		this.otherInfo = otherInfo;
 	}
+	
+	
 	/**
 	 * WARNING: don't change this method because it's been used in another places
 	 * @return {[type]} [description]
